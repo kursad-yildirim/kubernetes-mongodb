@@ -25,8 +25,8 @@ If volume and claim definitions are not in place prior to outting the deployment
     <li>Config: 1GB</li>
     <li>Data: 10GB</li>
 </ul>
-For all volumes access mode will be <i>ReadWriteMany</i>.
+For all volumes access mode will be <i color="#00BFFF">ReadWriteMany</i>.
 </p>
 
 <h2><u>Installation:</u></h2>
-<p>All resources can be created by using <br><font face="Consolas" align="center" color="light blue">kubectl apply -f <filename></font><br> command.</p>
+<p>All resources can be created by using <br><font face="Consolas" align="center" color="#00BFFF">kubectl apply -f <filename></font><br> command.</p>
