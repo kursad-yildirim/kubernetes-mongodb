@@ -20,4 +20,10 @@ If volume and claim definitions are not in place prior to outting the deployment
 <p>Service type will be <i>ClusterIP</i>. So it will be only accessible within k8s cluster</p>
 
 <h2><u>Storage:</u></h2>
-<p>Static provisioning will be used. Storage type will be <i>Hostpath</i></p>
+<p>Static provisioning will be used. Storage type will be <i>Hostpath</i> Two volume-claim pairs will be defined as:
+<ul>
+    <li>Config: 1GB</li>
+    <li>Data: 10GB</li>
+</ul>
+For all volumes access mode will be <i>ReadWriteMany</i>.
+</p>

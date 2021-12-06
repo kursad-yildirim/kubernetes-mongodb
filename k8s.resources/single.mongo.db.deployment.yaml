@@ -1,19 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: single-mongodb-deployment
+  namespace: default
   labels:
     component: mongodb
-  name: mongodb
-  namespace: default
+    resiliency: single
 spec:
   replicas: 1
   selector:
     matchLabels:
       component: mongodb
+      resiliency: single
   template:
     metadata:
       labels:
         component: mongodb
+        resiliency: single
     spec:
       containers:
         - name: mongodb
@@ -30,7 +33,7 @@ spec:
       volumes:
         - name: mongodb-data
           persistentVolumeClaim:
-            claimName: justice-mongodb-data
+            claimName: single-mongodb-data-pvc
         - name: mongodb-config
           persistentVolumeClaim:
-            claimName: justice-mongodb-config
+            claimName: single-mongodb-config-pvc
