@@ -13,20 +13,20 @@ Kubernetes Resource List:
 MongoDB database will be persistent. There will be no authentication nor ssl in place.
 
 <h2><u>Deployment:</u></h2>
-<p>MongoDb will be deployed in <i>default</i> namespaces with 1 replica. <i>mongo:4.2.17-bionic</i> will be used as the container image.<br>
-If volume and claim definitions are not in place prior to outting the deployment, k8s will throw a corresponding error and mongodb pod will not go into <i>Running</i> state. When persistent storage definitions are done pod will resume.</p>
+<p>MongoDb will be deployed in <i><font face="Arial" color="#FFD700">default</font></i> namespaces with 1 replica. <i><font face="Arial" color="#FFD700">mongo:4.2.17-bionic</font></i> will be used as the container image.<br>
+If volume and claim definitions are not in place prior to outting the deployment, k8s will throw a corresponding error and mongodb pod will not go into <i><font face="Arial" color="#FFD700">Running</font></i> state. When persistent storage definitions are done pod will resume.</p>
 
 <h2><u>Service:</u></h2>
-<p>Service type will be <i>ClusterIP</i>. So it will be only accessible within k8s cluster</p>
+<p>Service type will be <i><font face="Arial" color="#FFD700">ClusterIP</font></i>. So it will be only accessible within k8s cluster</p>
 
 <h2><u>Storage:</u></h2>
-<p>Static provisioning will be used. Storage type will be <i>Hostpath</i> Two volume-claim pairs will be defined as:
+<p>Static provisioning will be used. Storage type will be <i><font face="Arial" color="#FFD700">Hostpath</font></i> Two volume-claim pairs will be defined as:
 <ul>
     <li>Config: 1GB</li>
     <li>Data: 10GB</li>
 </ul>
-For all volumes access mode will be <i color="#00BFFF">ReadWriteMany</i>.
+For all volumes access mode will be <i><font face="Arial" color="#FFD700">ReadWriteMany</font></i>.
 </p>
 
 <h2><u>Installation:</u></h2>
-<p>All resources can be created by using <br><font face="Consolas" align="center" color="#00BFFF">kubectl apply -f <filename></font><br> command.</p>
+<p>All resources can be created by using <br><font face="Consolas" color="#00BFFF">kubectl apply -f <filename></font><br> command.</p>
