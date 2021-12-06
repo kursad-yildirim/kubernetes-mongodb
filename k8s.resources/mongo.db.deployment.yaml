@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    component: mongodb
+  name: mongodb
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: mongodb
+  template:
+    metadata:
+      labels:
+        component: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo:4.2.17-bionic
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: mongodb
+              containerPort: 27017
+          volumeMounts:
+            - name: mongodb-data
+              mountPath: /data/db
+            - name: mongodb-config
+              mountPath: /data/configdb
+      volumes:
+        - name: mongodb-data
+          persistentVolumeClaim:
+            claimName: justice-mongodb-data
+        - name: mongodb-config
+          persistentVolumeClaim:
+            claimName: justice-mongodb-config
