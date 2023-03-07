@@ -29,5 +29,4 @@ All resources can be created by using the command below:
 
 ~~~
 kubectl apply -f <filename>
-
 ~~~
