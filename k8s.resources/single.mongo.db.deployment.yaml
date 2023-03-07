@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: single-mongodb-deployment
+  name: mongodb-deployment
   namespace: default
   labels:
     component: mongodb
@@ -33,7 +33,7 @@ spec:
       volumes:
         - name: mongodb-data
           persistentVolumeClaim:
-            claimName: single-mongodb-data-pvc
+            claimName: mongodb-data-pvc
         - name: mongodb-config
           persistentVolumeClaim:
-            claimName: single-mongodb-config-pvc
+            claimName: mongodb-config-pvc

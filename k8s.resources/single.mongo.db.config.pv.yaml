@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: single-mongodb-config-pv
+  name: mongodb-config-pv
 spec:
   storageClassName: manual
   claimRef:
-    name: single-mongodb-config-pvc
+    name: mongodb-config-pvc
     namespace: default
   capacity:
     storage: 1Gi
